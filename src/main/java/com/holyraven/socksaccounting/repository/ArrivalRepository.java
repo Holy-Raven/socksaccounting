@@ -1,4 +1,8 @@
 package com.holyraven.socksaccounting.repository;
 
-public interface ArrivalRepository {
+import com.holyraven.socksaccounting.model.Arrival;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ArrivalRepository extends JpaRepository<Arrival, Long> {
+
 }
