@@ -6,4 +6,6 @@ import com.holyraven.socksaccounting.model.dto.ArrivalNewDto;
 public interface ArrivalService {
 
     ArrivalDto addNewArrival(ArrivalNewDto arrivalDto);
+
+    Integer getCountSocksFromParam(String color, String operation,Integer cottonPart);
 }

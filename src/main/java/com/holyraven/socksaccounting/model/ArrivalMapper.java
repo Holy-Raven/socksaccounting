@@ -10,7 +10,7 @@ public class ArrivalMapper {
 
     public Arrival returnArrival(ArrivalNewDto arrivalNewDto) {
         Arrival arrival = Arrival.builder()
-                .color(arrivalNewDto.getColor())
+                .color(arrivalNewDto.getColor().toLowerCase())
                 .cottonPart(arrivalNewDto.getCottonPart())
                 .quantity(arrivalNewDto.getQuantity())
                 .build();

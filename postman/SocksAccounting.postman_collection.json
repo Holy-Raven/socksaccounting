@@ -125,6 +125,318 @@
 				"url": "{{baseUrl}}/api/socks/income"
 			},
 			"response": []
+		},
+		{
+			"name": "add new Arrival soks - part 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"color\": \"black\",\n  \"cottonPart\": 5,\n  \"quantity\": 20\n}"
+				},
+				"url": "{{baseUrl}}/api/socks/income"
+			},
+			"response": []
+		},
+		{
+			"name": "add new Arrival soks - part 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"color\": \"red\",\n  \"cottonPart\": 95,\n  \"quantity\": 5\n}"
+				},
+				"url": "{{baseUrl}}/api/socks/income"
+			},
+			"response": []
+		},
+		{
+			"name": "add new Arrival soks - part 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"    pm.response.to.be.json;",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"color\": \"red\",\n  \"cottonPart\": 60,\n  \"quantity\": 10\n}"
+				},
+				"url": "{{baseUrl}}/api/socks/income"
+			},
+			"response": []
+		},
+		{
+			"name": "get count black where cotton_part < 10",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/socks?color=black&operation=lessThan&cottonPart=10",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"socks"
+					],
+					"query": [
+						{
+							"key": "color",
+							"value": "black"
+						},
+						{
+							"key": "operation",
+							"value": "lessThan"
+						},
+						{
+							"key": "cottonPart",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get count red where cotton_part > 90",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/socks?color=red&operation=moreThan&cottonPart=90",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"socks"
+					],
+					"query": [
+						{
+							"key": "color",
+							"value": "red"
+						},
+						{
+							"key": "operation",
+							"value": "moreThan"
+						},
+						{
+							"key": "cottonPart",
+							"value": "90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get count socks blue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 200 и данные в формате json\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/socks?color=blue&operation=moreThan&cottonPart=90",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"socks"
+					],
+					"query": [
+						{
+							"key": "color",
+							"value": "blue"
+						},
+						{
+							"key": "operation",
+							"value": "moreThan"
+						},
+						{
+							"key": "cottonPart",
+							"value": "90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get count socks bad operation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ответ должен содержать код статуса 400 и данные в формате json\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/socks?color=blue&operation=moreThanks&cottonPart=90",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"socks"
+					],
+					"query": [
+						{
+							"key": "color",
+							"value": "blue"
+						},
+						{
+							"key": "operation",
+							"value": "moreThanks"
+						},
+						{
+							"key": "cottonPart",
+							"value": "90"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
